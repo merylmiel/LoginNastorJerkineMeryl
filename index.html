@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>LoginNastorJerkine</title>
+        <meta name="author" content="Jerkine Meryl D. Nastor">
+
+        <script>
+            //This function is for the Login.
+            function LogIn()
+            {
+                var Username = document.login.username.value;
+                var Password = document.login.password.value;
+
+                if(Username == "jekjek" && Password == "miel")
+                {
+                    alert("Welcome "+ Username);
+                }
+                else if(Username == "" && Password == "")
+                {
+                    alert("Please enter username and password");
+                }
+                else if(Username == "jekjek" && Password == "")
+                {
+                    alert("You forgot to enter your password");
+                }
+                else if(Username == "" && Password == "miel")
+                {
+                    alert("You forgot to enter your username");
+                }
+                else
+                {
+                    alert("Error! Wrong username and password. Please try again");
+                }
+            }
+
+            //This function is on mouseover function that will change the color of the field into #7d8085.
+            //When the cursor is inside the enter username rectangle and enter password rectangle the color of the field will change into #7d8085.
+            function mouseover(a)
+            {
+                a.style.background = "#7d8085";
+            }
+
+            //This function is when login button is clicked, the color will change into #b08bad.
+            function mousedown(d)
+            {
+                d.style.background = "#b08bad";
+            }
+
+            //This function is when the cursor is not in the field it will be back to color white.
+            function mouseout(b)
+            {
+                b.style.background = "white";
+            }
+
+            //This function is to make the login button turn back to white after logging in.
+            function mouseup(c)
+            {
+                c.style.background = "white";
+            }
+
+            //This function is for the censored password to show.
+            function Showpass()
+            {
+                var e = document.getElementById("hiddenpass");
+                if(e.type == "password")
+                {
+                    e.type = "text";
+                }
+                else
+                {
+                    e.type = "password";
+                }
+            }
+        </script>
+    </head>
+    <body bgcolor="thistle" align = "center">
+        <br><br/><br/><br/><br/><br/><br/><br/><br>
+        <form name = "login">
+        Username 
+        <br/>
+        <input type="text" name = "username" placeholder="Enter Username" onmouseover="mouseover(this)" onmouseout="mouseout(this)"> 
+        <br/><br/>
+        Password 
+        <br/>
+        <input type="password" name ="password" placeholder="Enter Password" id="hiddenpass" onmouseover="mouseover(this)" onmouseout="mouseout(this)"> 
+        <br/><br/>
+        <input type="button" name ="login" value ="Login" onclick="LogIn()" onmouseup="mouseup(this)" onmousedown="mousedown(this)"> <input type = "checkbox" name="seen" onclick="Showpass()">Show Password
+        </form>
+    </body>
+</html>
